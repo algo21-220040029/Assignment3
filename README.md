@@ -13,7 +13,8 @@ The second method is the Sharpe model
 The Sharpe model is divided into two dimensions: value and scale  
 Therefore, the large-cap growth, large-cap value, mid-cap value, small-cap growth, small-cap value, and a ChinaBond total wealth index index are pulled from the wind as the dividing base.  
 A feature of the Sharpe model is that the sum of the weights of each factor must be 1, and this is a linear optimization problem, so the cvx package is used to add linear constraints to solve this optimization problem.   
-
+Both methods use rolling and apply to perform rolling calculations to effectively track changes in fund styles to discover how fund managers adjust positions, what styles are like, and what changes have taken place in styles.  
+At the same time, do t test for the generated regression model. If p_value is less than 10%, add an * to the result; if p_value is less than 5%, add two * to the result; if p_value is less than 1%, then Add three * to the result.   
 
 The result of Fama three factor model:  
 ![image](https://user-images.githubusercontent.com/78793744/117997010-3401a280-b375-11eb-8736-76d52946b704.png)  
