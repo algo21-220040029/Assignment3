@@ -9,6 +9,11 @@ Among them, the SMB factor is the return rate of the Giant Tide Small Cap Index 
 At the same time, the Fama three factors also have a market portfolio yield minus the risk-free interest rate factor.  
 This factor is replaced by Wind Quan A Index.  
 After obtaining the SMB and HML and the market factor, I use the OLS of statsmodel to calculate, but the cvx package is used in the code to calculate. This is because there are constraints in the solution of the subsequent Sharpe model, and ordinary OLS cannot solve the constrained Optimization problem.   
+The second method is the Sharpe model  
+The Sharpe model is divided into two dimensions: value and scale  
+Therefore, the large-cap growth, large-cap value, mid-cap value, small-cap growth, small-cap value, and a ChinaBond total wealth index index are pulled from the wind as the dividing base.  
+A feature of the Sharpe model is that the sum of the weights of each factor must be 1, and this is a linear optimization problem, so the cvx package is used to add linear constraints to solve this optimization problem.   
+
 
 The result of Fama three factor model:  
 ![image](https://user-images.githubusercontent.com/78793744/117997010-3401a280-b375-11eb-8736-76d52946b704.png)  
